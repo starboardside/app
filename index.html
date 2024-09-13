@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeFi Vault Simulation</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div id="wallet-login-container">
+        <button id="wallet-login-btn">Connect Wallet</button>
+    </div>
+    <div class="container">
+        <h1>DeFi Vault Simulation</h1>
+        <div class="balance-container">
+            <h2>Current Balance: $<span id="balance">0.00</span></h2>
+        </div>
+        <div class="actions-container">
+            <div class="action">
+                <h3>Deposit</h3>
+                <input type="number" id="depositAmount" placeholder="Amount" min="0" step="0.01">
+                <button onclick="deposit()">Deposit</button>
+            </div>
+            <div class="action">
+                <h3>Withdraw</h3>
+                <input type="number" id="withdrawAmount" placeholder="Amount" min="0" step="0.01">
+                <button onclick="withdraw()">Withdraw</button>
+            </div>
+        </div>
+        <div class="transactions-container">
+            <h3>Transaction History</h3>
+            <ul id="transactionList"></ul>
+        </div>
+    </div>
+    <script src="/app.js"></script>
+</body>
+</html>
