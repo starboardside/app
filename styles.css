@@ -1,9 +1,12 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Trebuchet MS', 'Helvetica', sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #e6f3ff;
+    background-image: url('https://img.freepik.com/free-vector/sea-background-video-conferencing_23-2148639635.jpg');
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .container {
@@ -11,18 +14,23 @@ body {
     margin: auto;
     overflow: hidden;
     padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
 h1, h2, h3 {
-    color: #333;
+    color: #003366;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .balance-container {
-    background-color: #fff;
+    background-color: #ffffff;
     padding: 20px;
     margin-bottom: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 51, 102, 0.1);
+    border: 2px solid #003366;
 }
 
 .actions-container {
@@ -32,38 +40,44 @@ h1, h2, h3 {
 }
 
 .action {
-    background-color: #fff;
+    background-color: #ffffff;
     padding: 20px;
     width: 45%;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 51, 102, 0.1);
+    border: 2px solid #003366;
 }
 
 input[type="number"] {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
+    border: 1px solid #003366;
+    border-radius: 5px;
 }
 
 button {
     display: block;
     width: 100%;
     padding: 10px;
-    background-color: #333;
-    color: #fff;
+    background-color: #003366;
+    color: #ffffff;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #555;
+    background-color: #005599;
 }
 
 .transactions-container {
-    background-color: #fff;
+    background-color: #ffffff;
     padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 51, 102, 0.1);
+    border: 2px solid #003366;
 }
 
 #transactionList {
@@ -73,7 +87,7 @@ button:hover {
 
 #transactionList li {
     padding: 10px 0;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #ccddff;
 }
 
 #transactionList li:last-child {
@@ -88,13 +102,39 @@ button:hover {
 
 #wallet-login-btn {
     padding: 10px 15px;
-    background-color: #4CAF50;
-    color: white;
+    background-color: #ff9900;
+    color: #ffffff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 #wallet-login-btn:hover {
-    background-color: #45a049;
+    background-color: #ffaa33;
+}
+
+/* Nautical elements */
+.container::before {
+    content: "⚓";
+    font-size: 48px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #003366;
+}
+
+.container::after {
+    content: "🧭";
+    font-size: 48px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: #003366;
+}
+
+h1::before, h1::after {
+    content: "⛵";
+    margin: 0 10px;
+    font-size: 24px;
 }
