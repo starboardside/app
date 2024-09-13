@@ -12,33 +12,37 @@
         <button id="wallet-login-btn">Connect Wallet</button>
     </div>
     <div class="container">
-        <h1>Starboard Side Finance</h1>
-        <div class="balance-container">
-            <h2>Ship's Treasure: $<span id="balance">0.00</span></h2>
-        </div>
-        <div class="actions-container">
-            <div class="action">
-                <h3>🏴‍☠️ Deposit Booty</h3>
-                <input type="number" id="depositAmount" placeholder="Amount" min="0" step="0.01">
-                <button onclick="deposit()">Stash Treasure</button>
-            </div>
-            <div class="action">
-                <h3>🦜 Withdraw Loot</h3>
-                <input type="number" id="withdrawAmount" placeholder="Amount" min="0" step="0.01">
-                <button onclick="withdraw()">Retrieve Treasure</button>
-            </div>
-        </div>
-        <div class="transactions-container">
-            <h3>Captain's Log</h3>
-            <ul id="transactionList"></ul>
-        </div>
+        <header>
+            <h1>Starboard Side Finance</h1>
+        </header>
+        <main>
+            <section class="balance-container">
+                <h2>Ship's Treasure: $<span id="balance">0.00</span></h2>
+            </section>
+            <section class="actions-container">
+                <div class="action">
+                    <h3>Deposit</h3>
+                    <input type="number" id="depositAmount" placeholder="Amount" min="0" step="0.01">
+                    <button onclick="deposit()">Stash Treasure</button>
+                </div>
+                <div class="action">
+                    <h3>🦜 Withdraw Loot</h3>
+                    <input type="number" id="withdrawAmount" placeholder="Amount" min="0" step="0.01">
+                    <button onclick="withdraw()">Retrieve Treasure</button>
+                </div>
+            </section>
+            <section class="transactions-container">
+                <h3>Captain's Log</h3>
+                <ul id="transactionList"></ul>
+            </section>
+        </main>
     </div>
     <footer>
         <div class="footer-content">
             <div class="social-icons">
-                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-discord"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="#" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank" aria-label="Discord"><i class="fab fa-discord"></i></a>
+                <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
             </div>
             <div class="footer-links">
                 <a href="#" target="_blank">Terms of Service</a>

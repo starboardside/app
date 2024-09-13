@@ -9,26 +9,140 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    color: #333;
 }
 
 .container {
-    width: 80%;
-    margin: auto;
+    width: 90%;
+    max-width: 1200px;
+    margin: 2rem auto;
     overflow: hidden;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.8);
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.9);
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     flex: 1;
 }
 
-/* Rest of the existing CSS remains unchanged */
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+h1, h2, h3 {
+    color: #204969;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.balance-container {
+    background-color: #e6f3f8;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.balance-container h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.actions-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.action {
+    background-color: #fff;
+    padding: 1.5rem;
+    width: 48%;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.action h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #204969;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2c6a96;
+}
+
+.transactions-container {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.transactions-container h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+#transactionList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#transactionList li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #eee;
+    font-size: 1rem;
+}
+
+#transactionList li:last-child {
+    border-bottom: none;
+}
+
+#wallet-login-container {
+    text-align: right;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+#wallet-login-btn {
+    display: inline-block;
+    width: auto;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+}
 
 footer {
     background-color: rgba(0, 51, 102, 0.9);
     color: #ffffff;
-    padding: 20px 0;
-    margin-top: 20px;
+    padding: 1.5rem 0;
+    margin-top: 2rem;
 }
 
 .footer-content {
@@ -37,20 +151,23 @@ footer {
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 1rem;
 }
 
 .social-icons a {
     color: #ffffff;
-    font-size: 24px;
-    margin-right: 15px;
+    font-size: 1.5rem;
+    margin-right: 1rem;
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .footer-links a {
     color: #ffffff;
     text-decoration: none;
-    margin-left: 15px;
+    margin-left: 1rem;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
 }
 
 .footer-links a:hover,
@@ -59,21 +176,35 @@ footer {
 }
 
 @media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 1rem;
+    }
+
+    .actions-container {
+        flex-direction: column;
+    }
+
+    .action {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
     .footer-content {
         flex-direction: column;
         text-align: center;
     }
 
     .social-icons {
-        margin-bottom: 15px;
+        margin-bottom: 1rem;
     }
 
     .footer-links {
-        margin-top: 15px;
+        margin-top: 1rem;
     }
 
     .footer-links a {
         display: block;
-        margin: 10px 0;
+        margin: 0.5rem 0;
     }
 }
