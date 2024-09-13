@@ -12,6 +12,20 @@ body {
     color: #333;
 }
 
+#top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+#top-bar h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #204969;
+}
+
 .container {
     width: 90%;
     max-width: 1200px;
@@ -24,19 +38,9 @@ body {
     flex: 1;
 }
 
-header {
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
 h1, h2, h3 {
     color: #204969;
     margin-bottom: 1rem;
-}
-
-h1 {
-    font-size: 2.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .balance-container {
@@ -57,12 +61,13 @@ h1 {
     display: flex;
     justify-content: space-between;
     margin-bottom: 2rem;
+    gap: 2rem;
 }
 
 .action {
     background-color: #fff;
     padding: 1.5rem;
-    width: 48%;
+    width: calc(50% - 1rem);
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -73,12 +78,13 @@ h1 {
 }
 
 input[type="number"] {
-    width: 100%;
+    width: 90%;
     padding: 0.8rem;
-    margin-bottom: 1rem;
+    margin: 0 auto 1rem auto;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1rem;
+    display: block;
 }
 
 button {
@@ -96,6 +102,13 @@ button {
 
 button:hover {
     background-color: #2c6a96;
+}
+
+#wallet-login-btn {
+    display: inline-block;
+    width: auto;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
 }
 
 .transactions-container {
@@ -123,19 +136,6 @@ button:hover {
 
 #transactionList li:last-child {
     border-bottom: none;
-}
-
-#wallet-login-container {
-    text-align: right;
-    padding: 1rem;
-    background-color: rgba(255, 255, 255, 0.9);
-}
-
-#wallet-login-btn {
-    display: inline-block;
-    width: auto;
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
 }
 
 footer {
@@ -176,6 +176,16 @@ footer {
 }
 
 @media (max-width: 768px) {
+    #top-bar {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    #top-bar h1 {
+        margin-bottom: 1rem;
+    }
+
     .container {
         width: 95%;
         padding: 1rem;
@@ -183,6 +193,7 @@ footer {
 
     .actions-container {
         flex-direction: column;
+        gap: 1rem;
     }
 
     .action {
