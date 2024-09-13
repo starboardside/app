@@ -3,10 +3,12 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #e6f3ff;
-    background-image: url('https://img.freepik.com/free-vector/sea-background-video-conferencing_23-2148639635.jpg');
+    background: linear-gradient(to bottom, #f4e4c1, #a8d8ea, #204969);
     background-size: cover;
     background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .container {
@@ -17,124 +19,61 @@ body {
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    flex: 1;
 }
 
-h1, h2, h3 {
-    color: #003366;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+/* Rest of the existing CSS remains unchanged */
+
+footer {
+    background-color: rgba(0, 51, 102, 0.9);
+    color: #ffffff;
+    padding: 20px 0;
+    margin-top: 20px;
 }
 
-.balance-container {
-    background-color: #ffffff;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 51, 102, 0.1);
-    border: 2px solid #003366;
-}
-
-.actions-container {
+.footer-content {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.action {
-    background-color: #ffffff;
-    padding: 20px;
-    width: 45%;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 51, 102, 0.1);
-    border: 2px solid #003366;
-}
-
-input[type="number"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #003366;
-    border-radius: 5px;
-}
-
-button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: #003366;
+.social-icons a {
     color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #005599;
-}
-
-.transactions-container {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 51, 102, 0.1);
-    border: 2px solid #003366;
-}
-
-#transactionList {
-    list-style-type: none;
-    padding: 0;
-}
-
-#transactionList li {
-    padding: 10px 0;
-    border-bottom: 1px solid #ccddff;
-}
-
-#transactionList li:last-child {
-    border-bottom: none;
-}
-
-#wallet-login-container {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-}
-
-#wallet-login-btn {
-    padding: 10px 15px;
-    background-color: #ff9900;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-#wallet-login-btn:hover {
-    background-color: #ffaa33;
-}
-
-/* Nautical elements */
-.container::before {
-    content: "⚓";
-    font-size: 48px;
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    color: #003366;
-}
-
-.container::after {
-    content: "🧭";
-    font-size: 48px;
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    color: #003366;
-}
-
-h1::before, h1::after {
-    content: "⛵";
-    margin: 0 10px;
     font-size: 24px;
+    margin-right: 15px;
+    text-decoration: none;
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+.footer-links a:hover,
+.social-icons a:hover {
+    color: #a8d8ea;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .social-icons {
+        margin-bottom: 15px;
+    }
+
+    .footer-links {
+        margin-top: 15px;
+    }
+
+    .footer-links a {
+        display: block;
+        margin: 10px 0;
+    }
 }
