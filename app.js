@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     updateBalance();
+    updateVaultInfo();
     updateTransactions();
     document.getElementById('wallet-login-btn').addEventListener('click', connectWallet);
 });
@@ -11,6 +12,18 @@ async function updateBalance() {
         document.getElementById('balance').textContent = data.balance.toFixed(2);
     } catch (error) {
         console.error('Error fetching balance:', error);
+    }
+}
+
+async function updateVaultInfo() {
+    try {
+        const response = await fetch('/api/vault-info');
+        const data = await response.json();
+        document.getElementById('tvl').textContent = data.tvl.toFixed(2);
+        document.getElementById('apy').textContent = data.apy.toFixed(2);
+        document.getElementById('user-share').textContent = data.userShare.toFixed(2);
+    } catch (error) {
+        console.error('Error fetching vault info:', error);
     }
 }
 
@@ -34,6 +47,7 @@ async function deposit() {
         if (response.ok) {
             alert(data.message);
             updateBalance();
+            updateVaultInfo();
             updateTransactions();
             document.getElementById('depositAmount').value = '';
         } else {
@@ -65,6 +79,7 @@ async function withdraw() {
         if (response.ok) {
             alert(data.message);
             updateBalance();
+            updateVaultInfo();
             updateTransactions();
             document.getElementById('withdrawAmount').value = '';
         } else {
